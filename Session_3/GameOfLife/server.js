@@ -1,11 +1,43 @@
-const Grass = require('./Grass2.js');
-const Grazer = require('./Grazer2.js');
-const Predator = require('./Predator2.js');
-const Mutant = require('./Mutant2.js');
-const Cannibale = require('./Cannibale2.js');
+const Grass = require('./Grass.js');
+const Grazer = require('./Grazer.js');
+const Predator = require('./Predator.js');
+const Mutant = require('./Mutant.js');
+const Cannibale = require('./Cannibale.js');
 
-function initGame() {  
-    //matrix = getRandMatrix(71, 37);
+let side = 20;
+let grassArr = [];
+let grazerArr = [];
+let predatorArr = [];
+let cannibaleArr = [];
+let mutantArr = [];
+let matrix = [];
+
+/**
+ * Returns a random integer between min (inclusive) and max (inclusive).
+ * The value is no lower than min (or the next integer greater than min
+ * if min isn't an integer) and no greater than max (or the next integer
+ * lower than max if max isn't an integer).
+ * Using Math.round() will give you a non-uniform distribution!
+ */
+function random(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function getRandMatrix(cols, rows) {
+    let matrix = [];
+    for(let y = 0; y < rows; y++) {
+        matrix[y] = []; 
+        for(let x = 0; x < cols; x++) {
+            matrix[y][x] = Math.round(random(0, 5));
+        }
+    }
+    return matrix;
+}
+
+function setup() {  
+    matrix = getRandMatrix(71, 37);
     //createCanvas(matrix[0].length * side + 1, matrix.length * side + 1);
     //background(50);
     //frameRate(5);
@@ -33,11 +65,7 @@ function initGame() {
     }
 }
 
-initGame();
-console.log(grazerArr)
-
-//Intervall-Funktion
-/*function draw() {
+function draw() {
     for(let i = 0; i < grassArr.length; i++) {
         let grassObj = grassArr[i];
         grassObj.mul();
@@ -82,4 +110,7 @@ console.log(grazerArr)
             rect(x * side, y * side, side, side);
         }
     }
-}*/
+}
+
+setup();
+setInterval(draw, 1000);

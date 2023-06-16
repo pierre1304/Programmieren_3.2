@@ -18,6 +18,5 @@
   "homepage": "https://github.com/pierre1304/Programmieren_3.2#readme",
   "dependencies": {
     "express": "^4.18.2"
-  },
-  "devDependencies": {}
+  }
 }
