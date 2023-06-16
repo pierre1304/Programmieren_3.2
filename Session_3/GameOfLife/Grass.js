@@ -1,4 +1,7 @@
 //const NameDerKlasse = require('/Creature'); falls Creature-Klasse benoetigt
+
+const matrix = require('./Matrix.js');
+
 module.exports = class Grass {
 
 

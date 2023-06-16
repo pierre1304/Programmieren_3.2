@@ -1,8 +1,24 @@
 function random(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+    let rand = Math.random();
+    if (typeof min === 'undefined') {
+      return rand;
+    } else if (typeof max === 'undefined') {
+      if (min instanceof Array) {
+        return min[Math.floor(rand * min.length)];
+      } else {
+        return rand * min;
+      }
+    } else {
+      if (min > max) {
+        var tmp = min;
+        min = max;
+        max = tmp;
+      }
+      return rand * (max - min) + min;
+    }
 }
+
+const matrix = require('./Matrix.js');
 
 //const NameDerKlasse = require('/Creature'); falls Creature-Klasse benoetigt
 module.exports = class Grazer {

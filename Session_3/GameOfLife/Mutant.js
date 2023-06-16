@@ -2,12 +2,27 @@
 -falls vollstÃ¤ndig von Gras umringt, mutiert er zu einem Grasfresser
 -falls mindestens zur HÃ¤lfte von Gras- oder Fleischfressern umringt, mutiert er zu einem Kannibalen*/
 
-function random(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+const matrix = require('./Matrix.js');
 
+function random(min, max) {
+    let rand = Math.random();
+    if (typeof min === 'undefined') {
+      return rand;
+    } else if (typeof max === 'undefined') {
+      if (min instanceof Array) {
+        return min[Math.floor(rand * min.length)];
+      } else {
+        return rand * min;
+      }
+    } else {
+      if (min > max) {
+        var tmp = min;
+        min = max;
+        max = tmp;
+      }
+      return rand * (max - min) + min;
+    }
+}
 //const NameDerKlasse = require('/Creature'); falls Creature-Klasse benoetigt
 module.exports = class Mutant {
 
