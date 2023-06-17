@@ -18,7 +18,7 @@ function random(min, max) {
     }
 }
 
-const matrix = require('./Matrix.js');
+const random = require('./functions.js');
 
 //const NameDerKlasse = require('/Creature'); falls Creature-Klasse benoetigt
 module.exports = class Grazer {

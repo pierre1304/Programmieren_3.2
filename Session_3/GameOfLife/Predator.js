@@ -1,6 +1,6 @@
 //const NameDerKlasse = require('/Creature'); falls Creature-Klasse benoetigt
 
-const matrix = require('./Matrix.js');
+const random = require('./functions.js');
 
 module.exports = class Predator {
     constructor(x, y) {

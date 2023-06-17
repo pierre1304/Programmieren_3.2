@@ -3,14 +3,14 @@ const Grazer = require('./Grazer.js');
 const Predator = require('./Predator.js');
 const Mutant = require('./Mutant.js');
 const Cannibale = require('./Cannibale.js');
-const matrix = require('./Matrix.js');
+const random = require('./functions.js');
 
 let side = 20;
-let grassArr = [];
-let grazerArr = [];
-let predatorArr = [];
-let cannibaleArr = [];
-let mutantArr = [];
+/*let*/ grassArr = [];
+/*let*/ grazerArr = [];
+/*let*/ predatorArr = [];
+/*let*/ cannibaleArr = [];
+/*let*/ mutantArr = [];
 
 function setup() {  
     //createCanvas(matrix[0].length * side + 1, matrix.length * side + 1);
@@ -65,7 +65,8 @@ function draw() {
         mutantObj.mutate();
         mutantObj.checkDeath();
     }
-    for(let y in matrix) {
+    console.log("update game");
+    /*for(let y in matrix) {
         y = parseInt(y);
         for(let x in matrix[y]) {
             x = parseInt(x);
@@ -82,9 +83,9 @@ function draw() {
             } else if (farbWert === 5) {
                 fill(0, 0, 255);
             }
-            rect(x * side, y * side, side, side);
+            //rect(x * side, y * side, side, side);
         }
-    }
+    }*/
 }
 
 setup();

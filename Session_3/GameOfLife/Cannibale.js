@@ -3,7 +3,7 @@
 -erhaelt immer Energie und vermehrt sich, wenn er frisst*/
 
 //const NameDerKlasse = require('/Creature'); falls Creature-Klasse benoetigt
-const matrix = require('./Matrix.js');
+const random = require('./functions.js');
 
 module.exports = class Cannibale {
     constructor(x, y) {

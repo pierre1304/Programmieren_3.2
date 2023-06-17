@@ -2,7 +2,7 @@
 -falls vollstÃ¤ndig von Gras umringt, mutiert er zu einem Grasfresser
 -falls mindestens zur HÃ¤lfte von Gras- oder Fleischfressern umringt, mutiert er zu einem Kannibalen*/
 
-const matrix = require('./Matrix.js');
+const random = require('./functions.js');
 
 function random(min, max) {
     let rand = Math.random();
