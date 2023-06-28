@@ -12,6 +12,22 @@ let side = 20;
 /*let*/ cannibaleArr = [];
 /*let*/ mutantArr = [];
 
+
+/* io.on('connection, function(socket) {
+    console.log("connection", io.engine.clientsCount);
+})
+
+socket.emit('send matrix', matrix);
+
+if (engine.clientsCount === 1) {
+    initGame();
+    setInterval(function () {
+        updateGame();
+        socket.emit('send matrix', matrix);
+    }, 1000);
+}
+ */
+
 function setup() {  
     //createCanvas(matrix[0].length * side + 1, matrix.length * side + 1);
     //background(50);
